@@ -1,0 +1,39 @@
+
+def getTotalX(a, b):
+    inte1=[]
+    inte = []
+    final_list=[]
+    false = 0
+    true = 0
+    for i in range(a[n-1], b[0]+1):
+        for item in a:
+            fac1 = i%item
+            if fac1 !=0:
+                false = false + 1
+            else:
+                true = true + 1
+        if true == len(a):
+            inte1.append(i)
+            true, false = 0, 0
+        else: true, false = 0, 0
+    for element in inte1:
+        for item in b:
+            fac2 = item%element
+            if fac2!=0:
+                false+=1
+            else:
+                true+=1
+        if true == len(b):
+            inte.append(element)
+            true, false = 0, 0
+        else:
+            true, false = 0, 0
+
+    for num in inte:
+        if num not in final_list:
+            final_list.append(num)
+    count = 0
+    for y in final_list:
+        count = count+1
+    return count
+
